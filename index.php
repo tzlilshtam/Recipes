@@ -14,18 +14,16 @@ include_once ('connect.php');
 </head>
 <body>
 <form class="form" name="form" id="enter" method="POST">
-    <label  id="labelID" >ID:</label><br>
-    <input type="text" id="id" name="EmployeeID" placeholder="ID..">
+    <label  id="labelID" ><b>PLEASE ENTER YOUR ID:</b></label><br>
+    <input type="text" id="id" name="EmployeeID" size="9" pattern="[0-9" placeholder="ID.." required>
     <label for="id" id="firstRole"></label>
-    <input type="hidden" id="seller" name="secRole" ">
-    <label for="secRole" id="labelSecRole"></label>
-    <input type="submit" id="login" name="login" value="Login">
+    <input type="submit" name="submit" id="login" name="login" value="Login">
     <span id="welcome"></span>
 </form>
 
 <?php
 
-if(isset($_POST['EmployeeID'])){
+if(isset($_POST['submit'])){
     $employeeID = $_POST['EmployeeID'];
 
     //$stmt = $conn->prepare("SELECT * FROM employee WHERE EmployeeID=$employeeID");
@@ -43,37 +41,17 @@ if(isset($_POST['EmployeeID'])){
         $row = $result->fetch_assoc(); // array of all the rows that are true of the query
         $isManager = $row["ShiftManager"]; // because it is id there is only one result
         if($isManager == "manager") {
-            /*
-         echo " <script>
 
-                       document.form.EmployeeID.type = \"radio\";
-                       document.form.EmployeeID.name = \"role\";
-                       document.form.EmployeeID.id = \"manager\";
-                       document.getElementById(\"labelID\").innerHTML = \"ROLE:\";
-                       document.getElementById(\"firstRole\").innerHTML = \"MANAGER\";
-                       document.form.secRole.type = \"radio\";
-                       document.form.secRole.name = \"role\";
-                       document.getElementById(\"labelSecRole\").innerHTML = \"SELLER\";
-                       document.form.login.value = \"Submit\";
-                  </script></form> ";
-           if(isset($_POST['role'])){
-
-               $role = $_POST['role'];
-               echo "role  $role"  ;
-           }
-       }
-       else{
-           ?>
-            <script>
-                document.getElementById("welcome").innerHTML = "WELCOME!";
-                document.form.login.value = "Logout";
-           </script>
-       <?php
-
-       }
-        */
-
-        echo $isManager;
+         echo "<script type=\"text/javascript\">
+                window.location.href = 'http://localhost/loginSystem/manager.php?employeeID=$employeeID';
+            </script>
+            ";
+        }
+        else{
+            echo "<script type=\"text/javascript\">
+                window.location.href = 'http://localhost/loginSystem/welcome.php?employeeID=$employeeID&role=Seller';
+            </script>
+            ";
         }
 
 
