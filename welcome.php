@@ -1,4 +1,6 @@
 <?php
+date_default_timezone_set('Asia/jerusalem');
+
 echo " 
         <link rel=\"stylesheet\" href=\"style.css\">
         <link href=\"//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css\" rel=\"stylesheet\" id=\"bootstrap-css\">
@@ -7,8 +9,8 @@ echo "
  
  
         <form class='form' method='post'>
-        <h1>WELCOME! </h1>". $_GET['employeeID'].", you are working today as " . $_GET['role'].". 
-        <input type='submit' name='logout' value='Logout'>
+        <h1>WELCOME! </h1>". $_GET['employeeID'].", you are working today as " . $_GET['role']."<br>Shift started on " . date("H:i:s d/m/Y ") . "   
+        <br><br><input type='submit' name='logout' value='Logout'>
         </form>";
 
 if(isset($_POST['logout'])){

@@ -10,9 +10,9 @@ echo "
 
 <form method='post' class='form'>
     <h1>ROLE: </h1><br>
-    <input type='radio' id='manager' value='manager' name='role'>
+    <input type='radio' id='manager' value='MANAGER' name='role'>
     <label for='manager'>SHIFT MANAGER</label><br>
-    <input type='radio' id='seller' value='seller' name='role'>
+    <input type='radio' id='seller' value='SELLER' name='role'>
     <label for='seller'>SELLER</label><br>      
     <input type='submit' name='submit'> 
 </form>";
