@@ -16,14 +16,25 @@ echo "
     <label for='seller'>SELLER</label><br>      
     <input type='submit' name='submit'> 
 </form>";
-echo  $_SESSION["employeeID"] . "hey";
+
 $id = $_GET["employeeID"];
 
-if(isset($_POST['submit'])){
+if(!isset($_SESSION["key"]) || $_SESSION["key"] != '123' ){
+    echo "heyhey";
+    echo "<script type=\"text/javascript\">
+                window.location.href = '404.php';
+            </script>
+            ";
+}
+if(isset($_POST['submit'])) {
     $role = $_POST['role'];
     echo "<script type=\"text/javascript\">
                 window.location.href = 'https://login-system-by-tzlil.herokuapp.com/welcome.php?employeeID=$id&role=$role';
             </script>
             ";
 
+
 }
+
+
+
