@@ -39,13 +39,13 @@ if(isset($_POST['submit'])){
         if($isManager == "manager") {
 
          echo "<script type=\"text/javascript\">
-             window.location.href = 'http://localhost/loginSystem/manager.php?employeeID=$employeeID';
+             window.location.href = 'https://login-system-by-tzlil.herokuapp.com/manager.php?employeeID=$employeeID';
            </script>
            ";
         }
         else{
             echo "<script type=\"text/javascript\">
-                window.location.href = 'http://localhost/loginSystem/welcome.php?employeeID=$employeeID&role=Seller';
+                window.location.href = 'https://login-system-by-tzlil.herokuapp.com/welcome.php?employeeID=$employeeID&role=Seller';
             </script>
             ";
         }

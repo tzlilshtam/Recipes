@@ -22,7 +22,7 @@ $id = $_GET["employeeID"];
 if(isset($_POST['submit'])){
     $role = $_POST['role'];
     echo "<script type=\"text/javascript\">
-                window.location.href = 'http://localhost/loginSystem/welcome.php?employeeID=$id&role=$role';
+                window.location.href = 'https://login-system-by-tzlil.herokuapp.com/welcome.php?employeeID=$id&role=$role';
             </script>
             ";
 

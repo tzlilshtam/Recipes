@@ -15,7 +15,7 @@ echo "
 
 if(isset($_POST['logout'])){
     echo "<script type=\"text/javascript\">
-                window.location.href = 'http://localhost/loginSystem/index.php';
+                window.location.href = 'https://login-system-by-tzlil.herokuapp.com/ ';
             </script>
             ";
 }
