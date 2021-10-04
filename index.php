@@ -1,5 +1,6 @@
 <?php
 include_once ('connect.php');
+session_start();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -15,7 +16,7 @@ include_once ('connect.php');
 <body>
 <form class="form" name="form" id="enter" method="POST">
     <label  id="labelID" ><b>PLEASE ENTER YOUR ID:</b></label><br>
-    <input type="text" id="id" name="EmployeeID" size="9" pattern="[0-9" placeholder="ID.." required>
+    <input type="text" id="id" name="EmployeeID" size="9"  placeholder="ID.." required>
     <label for="id" id="firstRole"></label>
     <input type="submit" name="submit" id="login" name="login" value="Login">
     <span id="welcome"></span>
@@ -25,13 +26,8 @@ include_once ('connect.php');
 
 if(isset($_POST['submit'])){
     $employeeID = $_POST['EmployeeID'];
+    $_SESSION["employeeID"] =  $employeeID ;
 
-    //$stmt = $conn->prepare("SELECT * FROM employee WHERE EmployeeID=$employeeID");
-
-    //$stmt->bind_param('i', $employeeID);
-
-   // $stmt->execute();
-    //$user = $stmt->fetch();
     $sql = "SELECT * FROM employee WHERE EmployeeID=$employeeID";
     $result = $conn->query($sql);
 
@@ -43,9 +39,9 @@ if(isset($_POST['submit'])){
         if($isManager == "manager") {
 
          echo "<script type=\"text/javascript\">
-                window.location.href = 'http://localhost/loginSystem/manager.php?employeeID=$employeeID';
-            </script>
-            ";
+             window.location.href = 'http://localhost/loginSystem/manager.php?employeeID=$employeeID';
+           </script>
+           ";
         }
         else{
             echo "<script type=\"text/javascript\">

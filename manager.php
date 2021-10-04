@@ -1,6 +1,6 @@
 <?php
 require ('connect.php');
-
+session_start();
 echo "
     <link rel=\"stylesheet\" href=\"style.css\">
 
@@ -10,13 +10,13 @@ echo "
 
 <form method='post' class='form'>
     <h1>ROLE: </h1><br>
-    <input type='radio' id='manager' value='MANAGER' name='role'>
+    <input type='radio' id='manager' value='MANAGER' name='role' checked='checked'>
     <label for='manager'>SHIFT MANAGER</label><br>
     <input type='radio' id='seller' value='SELLER' name='role'>
     <label for='seller'>SELLER</label><br>      
     <input type='submit' name='submit'> 
 </form>";
-echo  ($_GET["employeeID"]);
+echo  $_SESSION["employeeID"] . "hey";
 $id = $_GET["employeeID"];
 
 if(isset($_POST['submit'])){
