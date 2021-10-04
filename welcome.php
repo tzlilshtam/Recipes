@@ -1,6 +1,12 @@
 <?php
+session_start();
 date_default_timezone_set('Asia/jerusalem');
-
+if($_SESSION['loggedIn']){
+    //allow
+}
+else{
+    header('Location: 404.php');
+}
 echo " 
         <link rel=\"stylesheet\" href=\"style.css\">
         <link href=\"//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css\" rel=\"stylesheet\" id=\"bootstrap-css\">

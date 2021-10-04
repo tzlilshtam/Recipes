@@ -1,6 +1,12 @@
 <?php
 require ('connect.php');
 session_start();
+if($_SESSION['loggedIn']){
+    //allow
+}
+else{
+    header('Location: 404.php');
+}
 echo "
     <link rel=\"stylesheet\" href=\"style.css\">
 
@@ -19,12 +25,7 @@ echo "
 
 $id = $_GET["employeeID"];
 
-if($_SESSION['loggedIn']){
-    //allow
-}
-else{
-    header('Location: 404.php');
-}
+
 if(isset($_POST['submit'])) {
     $role = $_POST['role'];
     echo "<script type=\"text/javascript\">
