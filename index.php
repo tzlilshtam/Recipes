@@ -23,7 +23,7 @@ session_start();
 </form>
 
 <?php
-
+$_SESSION['loggedIn'] = false;
 if(isset($_POST['submit'])){
     $employeeID = $_POST['EmployeeID'];
     $_SESSION['loggedIn'] = true;

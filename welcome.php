@@ -14,6 +14,13 @@ echo "
         </form>";
 
 if(isset($_POST['logout'])){
+
+    // remove all session variables
+     session_unset();
+
+    // destroy the session
+     session_destroy();
+
     echo "<script type=\"text/javascript\">
                 window.location.href = 'https://login-system-by-tzlil.herokuapp.com/ ';
             </script>
