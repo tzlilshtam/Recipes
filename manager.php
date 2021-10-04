@@ -19,12 +19,11 @@ echo "
 
 $id = $_GET["employeeID"];
 
-if(!isset($_SESSION["key"]) || $_SESSION["key"] != '123' ){
-    echo "heyhey";
-    echo "<script type=\"text/javascript\">
-                window.location.href = '404.php';
-            </script>
-            ";
+if($_SESSION['loggedIn']){
+    //allow
+}
+else{
+    header('Location: 404.php');
 }
 if(isset($_POST['submit'])) {
     $role = $_POST['role'];

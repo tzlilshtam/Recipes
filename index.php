@@ -26,7 +26,7 @@ session_start();
 
 if(isset($_POST['submit'])){
     $employeeID = $_POST['EmployeeID'];
-    $_SESSION["key"] =  '123' ;
+    $_SESSION['loggedIn'] = true;
 
     $sql = "SELECT * FROM employee WHERE EmployeeID=$employeeID";
     $result = $conn->query($sql);
