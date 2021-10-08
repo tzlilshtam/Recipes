@@ -16,6 +16,7 @@ if ($conn->connect_error) {
 }
 echo "Connection Succeed";
 $InstrumentDB = new recipe($conn);
+$InstrumentDB = new recipe($conn);
 
 
 

@@ -1,6 +1,7 @@
 <?php
-require_once ('connect.php');
-require ('header.php');
+require_once ('../classes and connect/connect.php');
+require ('../header.php');
+session_start();
 ?>
 
 
@@ -41,7 +42,7 @@ require ('header.php');
           <span class="sr-only">Next</span>
         </a>
     </div>
-    <button class="btn btn-success glyphicon glyphicon-plus btn-lg" onClick="window.location.href='http://localhost/recipe-site/insert.php';">
+    <button class="btn btn-success glyphicon glyphicon-plus btn-lg" onClick="window.location.href='http://localhost/recipe-site/recipe pages/insert.php';">
          New Recipe
     </button>
     <div class="container text-center">
@@ -54,12 +55,12 @@ require ('header.php');
           ?>
         <div class="col-sm-4">
           <img src=<?php echo $recipe['picture']?> class="img-responsive" style="height: 250px;width: 100%"  alt="Image">
-          <p><?php echo $recipe['name']?> || <button class="btn btn-info glyphicon glyphicon-thumbs-up btn-sm" onclick="<?php echo "window.location.href='http://localhost/recipe-site/like.php?id=$id';"?>"></button> <?php echo $recipe['likes']?></p>
+          <p><?php echo $recipe['name']?> || <button class="btn btn-info glyphicon glyphicon-thumbs-up btn-sm" onclick="<?php echo "window.location.href='http://localhost/recipe-site/recipe pages/like.php?id=$id';"?>"></button> <?php echo $recipe['likes']?></p>
             <div class="well">
                 <p ><?php echo $recipe['description']?>.</p>
-                <button class="btn btn-danger glyphicon glyphicon-trash" type="button" onclick="<?php echo "window.location.href='http://localhost/recipe-site/delete.php?id=$id';"?>">
+                <button class="btn btn-danger glyphicon glyphicon-trash" type="button" onclick="<?php echo "window.location.href='http://localhost/recipe-site/recipe pages/delete.php?id=$id';"?>">
                 </button>
-                <button class='btn btn-primary glyphicon glyphicon-pencil iteminfo blockquote text-center' type="button" onclick="<?php echo "window.location.href='http://localhost/recipe-site/edit.php?id=$id';"?>">
+                <button class='btn btn-primary glyphicon glyphicon-pencil iteminfo blockquote text-center' type="button" onclick="<?php echo "window.location.href='http://localhost/recipe-site/recipe pages/edit.php?id=$id';"?>">
                 </button>
             </div>
         </div>

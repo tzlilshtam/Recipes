@@ -1,6 +1,6 @@
 <?php
-require('connect.php');
-require ('header.php');
+require_once ('../classes and connect/connect.php');
+require ('../header.php');
 
 if(isset($_GET['id'])) {
     foreach ($InstrumentDB->edit1($_GET['id']) as $recipe){
@@ -48,7 +48,7 @@ if (isset($_POST['submit'])){
     $description = $_POST['description'];
     echo $name;
     $InstrumentDB->edit2($_GET['id'],$name, $picture, $description);
-     header("location:http://localhost/recipe-site/main.php");
+     header("location:http://localhost/recipe-site/recipe pages/main.php");
 }
 
 }

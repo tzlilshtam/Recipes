@@ -14,17 +14,17 @@
 <nav class="navbar navbar-inverse">
     <div class="container-fluid">
         <div class="navbar-header" >
-            <img src="pictures/pot%20icon.png" alt="logo" style="height:12%; width: 100%" class="navbar-brand" ></img>
+            <img src="../pictures/pot%20icon.png" alt="logo" style="height:12%; width: 100%" class="navbar-brand" ></img>
         </div>
         <div class="collapse navbar-collapse" id="myNavbar">
             <ul class="nav navbar-nav">
-                <li c><a href="http://localhost/recipe-site/main.php" >Home</a></li>
+                <li c><a href="http://localhost/recipe-site/recipe pages/main.php">Home</a></li>
                 <li><a href="#">About</a></li>
                 <li><a href="#">Projects</a></li>
                 <li><a href="#">Contact</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+                <li><a href="http://localhost/recipe-site/login pages/index.php"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
             </ul>
         </div>
     </div>

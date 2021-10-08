@@ -1,5 +1,5 @@
 <?php
-require ('connect.php');
+require_once ('../classes and connect/connect.php');
 if(isset($_GET['id'])){
     $id = $_GET['id'];
     foreach ($InstrumentDB->edit1($id) as $recipe){
@@ -10,5 +10,5 @@ if(isset($_GET['id'])){
     }
 
     $InstrumentDB->addLike($id , $likes+1);
-    header("location:http://localhost/recipe-site/main.php");
+    header("location:http://localhost/recipe-site/recipe pages/main.php");
 }

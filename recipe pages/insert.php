@@ -1,6 +1,6 @@
 <?php
-require('connect.php');
-require ('header.php');
+require_once ('../classes and connect/connect.php');
+require ('../header.php');
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -40,6 +40,6 @@ if(isset($_POST['submit'])){
     $picture = $_POST['picture'];
     $description = $_POST['description'];
     $InstrumentDB->insert($name, $picture, $description,0);
-    header("location:http://localhost/recipe-site/main.php");
+    header("location:http://localhost/recipe-site/recipe pages/main.php");
 
 }
