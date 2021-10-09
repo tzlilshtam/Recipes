@@ -1,6 +1,7 @@
 <?php
 include_once ('../classes and connect/connect.php');
-session_start();
+include_once ('../header.php');
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -14,7 +15,7 @@ session_start();
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </head>
 <body>
-<form class="form" name="form" id="enter" method="POST">
+<form class="form"style = "position:fixed; left:40%; top:300px; name="form" id="enter" method="POST">
     <label  id="labelID" ><b>PLEASE ENTER YOUR USER NAME AND PASSWORD:</b></label><br>
     <input type="text" id="username" name="username"   placeholder="USER NAME.." required><br>
     <input type="password" id="password" name="password"   placeholder="PASSWORD.." required>
@@ -28,11 +29,11 @@ if(isset($_POST['submit'])){
     $username = $_POST['username'];
     $password = $_POST['password'];
 
-    $sql = "SELECT * FROM recipe_user WHERE userName=$username AND password=$password";
-    $result = $conn->query($sql);
+    $result = $InstrumentUserDB->getUser($username, $password);
 
     if ($result->num_rows > 0) {
         $_SESSION['loggedIn'] = true;
+        header("location:http://localhost/recipe-site/recipe pages/main.php?username=$username");
 
 
 

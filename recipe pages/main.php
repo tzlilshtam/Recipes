@@ -1,10 +1,9 @@
 <?php
 require_once ('../classes and connect/connect.php');
 require ('../header.php');
-session_start();
 ?>
 
-
+<body >
 
     <div id="myCarousel" class="carousel slide" data-ride="carousel">
         <!-- Indicators -->

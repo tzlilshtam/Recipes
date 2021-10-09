@@ -23,5 +23,7 @@ footer {
         display: none;
     }
 }
-
+body {
+    background-color: blueviolet;
+}
 

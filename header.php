@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -24,8 +27,27 @@
                 <li><a href="#">Contact</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="http://localhost/recipe-site/login pages/index.php"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+                <li><h3 id="welcomeUser" style=" position: relative;top: 3px;color: #f2f2f2"></h3></li>
+                <li><a href="http://localhost/recipe-site/login pages/index.php" id="login" style="position: relative;top: 11px;"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
             </ul>
         </div>
     </div>
 </nav>
+
+<?php
+if($_SESSION['loggedIn']) {
+    echo "hehey";
+    $username = $_GET['username'];
+    echo "
+    <script>
+    document.getElementById('welcomeUser').innerHTML = 'Welcome $username';
+    document.getElementById('login').innerHTML = 'Logout';
+    document.getElementById('login').setAttribute('href', '#');
+   
+    
+    
+    
+    </script> ";
+
+    }
+    ?>

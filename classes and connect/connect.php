@@ -1,5 +1,6 @@
 <?php
 include_once ('recipe.php');
+include_once ('recipe_user.php');
 
 $servername = "127.0.0.1";
 $username = "root";
@@ -16,7 +17,7 @@ if ($conn->connect_error) {
 }
 echo "Connection Succeed";
 $InstrumentDB = new recipe($conn);
-$InstrumentDB = new recipe($conn);
+$InstrumentUserDB = new recipe_user($conn);
 
 
 
